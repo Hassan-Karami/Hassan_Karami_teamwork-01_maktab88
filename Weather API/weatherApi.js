@@ -49,5 +49,17 @@ function putCountryInfo(){
 let selector= document.getElementById("selector");
 let selectedCountry= selector.options[selector.selectedIndex].text;
 document.getElementById("country").innerText= selectedCountry;
+renderCapitalInput(selectedCountry);
 }
 
+function renderCapitalInput(countryName){
+    // fullData.forEach(el=>el["name"]["common"]=== countryName)
+    let targetCountry= fullData.filter(el=>el["name"]["common"]=== countryName);
+    // let targetCapital= targetCountry["name"];
+    // if(targetCapital){
+    //     console.log(targetCapital[0]);
+    // }
+    
+  console.log(targetCountry[0]["capital"][0]);
+
+}
