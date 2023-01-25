@@ -13,67 +13,72 @@
 </head>
 
 <body>
-    <!-- Nav Bar Start  -->
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-Secondary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">weather</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!--start: Select Country Box-->
-                <select onchange="putCountryInfo()" id="selector"  class=" form-select" aria-label="Default select example">
-                    <option selected>--- Choose  Country ---</option>
-                    <option value="1">One</option>
-                  </select>
-                <!--end: Select Country Box-->
-
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- Nav Bar End -->
-    <div class="container-xl mt-3 my-3" id="flag">
-        <div class="row gy-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navBar">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-md-2 mt-lg-0 mt-sm-3">
+                <div class="theme-container shadow-dark">
+                    <img id="theme-icon"    src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+                  </div>
+            </ul>
+            <form class="d-flex">
+                <select id="selector" class=" form-select" aria-label="Default select example">
+                    <option selected>--- Choose Country ---</option>
+                </select>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="container-xxl mt-3 my-3 main-content">
+        <div class="row gy-4 align-items-stretch">
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="card shadow">
-                    <div class="mapouter">
-                        <h4 ><span>Country:  </span> <span id="country" >---</span></h4>
-                        <p><span>Capital:  </span> <span id="capital" >---</span></p>
-                        <p><span>Region:  </span> <span id="region" >---</span></p>
-                        <p><span>Population:  </span> <span id="population" >---</span></p>
-                        <p><span>Languages: </span> <span id="languages" >---</span></p>
-                        <p><span>Time-zone:  </span> <span id="time-zone" >---</span></p>
+                <div class="card shadow ps-2" id="box">
+                    <div>
+                        <h4><span class="fontSpan">Country: </span> <span id="country">---</span></h4>
+                        <p><span class="fontSpan">Capital: </span> <span id="capital">---</span></p>
+                        <p><span class="fontSpan">Languages: </span> <span id="languages">---</span></p>
+                        <p><span class="fontSpan">Region: </span> <span id="region">---</span></p>
+                        <p><span class="fontSpan">Native Name: </span> <span id="NativeName">---</span></p>
+                        <p><span class="fontSpan">Population: </span> <span id="population">---</span></p>
+                        <p><span class="fontSpan">Time-zone: </span> <span id="time-zone">---</span></p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card shadow box">
-                    <h4>capital weather report</h4>
-                    <img src="./2262130.jpg" alt="" style="height: 60px;">
-                    <p>wind speeed:--</p>
-                    <p>temperature:--</p>
-                    <p>humidity:--</p>
-                    <p>visibility:--</p>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="card shadow ps-3 boxWeather" id="box">
+                    <h4 class="py-3">capital weather report</h4>
+                    <div class="py-3">
+                        
+                        <div id="weatherConditionIcon"></div>
+                        <h4><span class="fontSpan">wind speeed: </span> <span id="windSpeed">---</span></h4>
+                        <p><span class="fontSpan">temperature: </span> <span id="temperature">---</span></p>
+                        <p><span class="fontSpan">humidity: </span> <span id="humidity">---</span></p>
+                        <p><span class="fontSpan">visibility: </span> <span id="visibility">---</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 col-12">
+                <div class="card shadow" id="flag">
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="card shadow">
-                    flag
-                </div>
-                <div class="card shadow">
-                    calling code
+                <div class="card shadow rounded" id="box" style="height:100%; width: 100%;">
+                    <h1 class="codeNumber">Calling Code</h1>
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div>
+                            <p id="callingCode"></p>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
-            <div class="col-lg-12 col-md-6 col-12" id="mapBody">
-                <div class="card shadow">
+            <div class="col-lg-8 col-md-12 col-12">
+                <div class="card shadow" id="box">
                     <div class="mapouter">
-                        <iframe width="100%" height="250"
-                            src="https://maps.google.com/maps?q=tehran=&z=13&ie=UTF8&iwloc=&output=embed"
-                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-                        </iframe>
                     </div>
                 </div>
             </div>
